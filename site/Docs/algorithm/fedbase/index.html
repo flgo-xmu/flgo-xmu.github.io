@@ -1,0 +1,4158 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../vflbase/">
+      
+      <link rel="icon" href="../../../img/flgo_icon.ico">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.5">
+    
+    
+      
+        <title>flgo.algorithm.fedbase - FLGo</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.7a7fce14.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#flgo.algorithm.fedbase" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="FLGo" class="md-header__button md-logo" aria-label="FLGo" data-md-component="logo">
+      
+  <img src="../../../img/f.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            FLGo
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              flgo.algorithm.fedbase
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Select language">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="/en/" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+              
+                <li class="md-select__item">
+                  <a href="/cn/" hreflang="cn" class="md-select__link">
+                    中文
+                  </a>
+                </li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../../getting_started/" class="md-tabs__link">
+      Get Started
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Overview/" class="md-tabs__link">
+        Overview
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../FLGo/" class="md-tabs__link md-tabs__link--active">
+        Docs
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Tutorials/" class="md-tabs__link">
+        Tutorials
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../../about/" class="md-tabs__link">
+      About
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="https://github.com/WwZzz/easyFL" class="md-tabs__link">
+      Github
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="FLGo" class="md-nav__button md-logo" aria-label="FLGo" data-md-component="logo">
+      
+  <img src="../../../img/f.png" alt="logo">
+
+    </a>
+    FLGo
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting_started/" class="md-nav__link">
+        Get Started
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../Overview/">Overview</a>
+          
+            <label for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Overview
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../Overview/Architecture/">Architecture</a>
+          
+            <label for="__nav_2_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Architecture
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Overview/Architecture/benchmark/" class="md-nav__link">
+        Benchmark
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Overview/Architecture/algorithm/" class="md-nav__link">
+        Algorithm
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Overview/Architecture/experiment/" class="md-nav__link">
+        Experiment
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Overview/Architecture/simulator/" class="md-nav__link">
+        Simulator
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Docs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Docs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FLGo/" class="md-nav__link">
+        FLGo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../">flgo.algorithm</a>
+          
+            <label for="__nav_3_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          flgo.algorithm
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          flgo.algorithm.fedbase
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        flgo.algorithm.fedbase
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicClient" class="md-nav__link">
+    BasicClient
+  </a>
+  
+    <nav class="md-nav" aria-label="BasicClient">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicClient.get_batch_data" class="md-nav__link">
+    get_batch_data()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicClient.get_time_response" class="md-nav__link">
+    get_time_response()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicClient.is_dropped" class="md-nav__link">
+    is_dropped()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicClient.is_idle" class="md-nav__link">
+    is_idle()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicClient.is_working" class="md-nav__link">
+    is_working()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicClient.pack" class="md-nav__link">
+    pack()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicClient.register_server" class="md-nav__link">
+    register_server()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicClient.reply" class="md-nav__link">
+    reply()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicClient.set_batch_size" class="md-nav__link">
+    set_batch_size()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicClient.set_learning_rate" class="md-nav__link">
+    set_learning_rate()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicClient.set_local_epochs" class="md-nav__link">
+    set_local_epochs()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicClient.test" class="md-nav__link">
+    test()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicClient.train" class="md-nav__link">
+    train()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicClient.train_loss" class="md-nav__link">
+    train_loss()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicClient.unpack" class="md-nav__link">
+    unpack()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicClient.update_device" class="md-nav__link">
+    update_device()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicClient.valid_loss" class="md-nav__link">
+    valid_loss()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicParty" class="md-nav__link">
+    BasicParty
+  </a>
+  
+    <nav class="md-nav" aria-label="BasicParty">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicParty.communicate_with" class="md-nav__link">
+    communicate_with()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicParty.initialize" class="md-nav__link">
+    initialize()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicParty.message_handler" class="md-nav__link">
+    message_handler()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicParty.register_action_to_mtype" class="md-nav__link">
+    register_action_to_mtype()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicParty.register_objects" class="md-nav__link">
+    register_objects()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicParty.set_data" class="md-nav__link">
+    set_data()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicParty.set_id" class="md-nav__link">
+    set_id()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicParty.set_model" class="md-nav__link">
+    set_model()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicServer" class="md-nav__link">
+    BasicServer
+  </a>
+  
+    <nav class="md-nav" aria-label="BasicServer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicServer.available_clients" class="md-nav__link">
+    available_clients
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicServer.aggregate" class="md-nav__link">
+    aggregate()
+  </a>
+  
+    <nav class="md-nav" aria-label="aggregate()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicServer.aggregate--weighted_scale-uniform-default-weighted_com-original-fedavg-other" class="md-nav__link">
+    weighted_scale                 |uniform (default)          |weighted_com (original fedavg)   |other
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicServer.communicate" class="md-nav__link">
+    communicate()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicServer.communicate_with" class="md-nav__link">
+    communicate_with()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicServer.get_tolerance_for_latency" class="md-nav__link">
+    get_tolerance_for_latency()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicServer.global_lr_scheduler" class="md-nav__link">
+    global_lr_scheduler()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicServer.global_test" class="md-nav__link">
+    global_test()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicServer.init_algo_para" class="md-nav__link">
+    init_algo_para()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicServer.iterate" class="md-nav__link">
+    iterate()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicServer.pack" class="md-nav__link">
+    pack()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicServer.register_clients" class="md-nav__link">
+    register_clients()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicServer.run" class="md-nav__link">
+    run()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicServer.sample" class="md-nav__link">
+    sample()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicServer.test" class="md-nav__link">
+    test()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicServer.unpack" class="md-nav__link">
+    unpack()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicServer.wait_time" class="md-nav__link">
+    wait_time()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vflbase/" class="md-nav__link">
+        flgo.algorithm.vflbase
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../benchmark/">flgo.benchmark</a>
+          
+            <label for="__nav_3_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          flgo.benchmark
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../benchmark/base/" class="md-nav__link">
+        flgo.benchmark.base
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_3_3" id="__nav_3_3_3_label" tabindex="0">
+          flgo.benchmark.toolkits
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          flgo.benchmark.toolkits
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3_3_1" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../benchmark/toolkits/cv/">flgo.benchmark.toolkits.cv</a>
+          
+            <label for="__nav_3_3_3_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_3_3_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_3_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          flgo.benchmark.toolkits.cv
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../benchmark/toolkits/cv/horizontal/image_classification/" class="md-nav__link">
+        flgo.benchmark.toolkits.cv.horizontal.image_classification
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../empty/" class="md-nav__link">
+        flgo.benchmark.toolkits.nlp
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../empty/" class="md-nav__link">
+        flgo.benchmark.toolkits.graph
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../empty/" class="md-nav__link">
+        flgo.benchmark.toolkits.tabular
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../benchmark/toolkits/parition/" class="md-nav__link">
+        flgo.benchmark.toolkits.partition
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../benchmark/toolkits/visualization/" class="md-nav__link">
+        flgo.benchmark.toolkits.visualization
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../experiment/">flgo.experiment</a>
+          
+            <label for="__nav_3_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          flgo.experiment
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4_2" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_4_2" id="__nav_3_4_2_label" tabindex="0">
+          flgo.experiment.logger
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          flgo.experiment.logger
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../experiment/logger/BasicLogger/" class="md-nav__link">
+        BasicLogger
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../experiment/analyzer/" class="md-nav__link">
+        flgo.experiment.analyzer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../experiment/device_scheduler/" class="md-nav__link">
+        flgo.experiment.device_scheduler
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_5" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../simulator/">flgo.simulator</a>
+          
+            <label for="__nav_3_5">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_5">
+          <span class="md-nav__icon md-icon"></span>
+          flgo.simulator
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../simulator/base/" class="md-nav__link">
+        flgo.simulator.base
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../simulator/default_simulator/" class="md-nav__link">
+        flgo.simulator.default_simulator
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_6" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../utils/">flgo.utils</a>
+          
+            <label for="__nav_3_6">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_6">
+          <span class="md-nav__icon md-icon"></span>
+          flgo.utils
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../utils/fflow/" class="md-nav__link">
+        flgo.utils.fflow
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../utils/fmodule/" class="md-nav__link">
+        flgo.utils.fmodule
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../Tutorials/">Tutorials</a>
+          
+            <label for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Tutorials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tutorials/0_Quick_Start/" class="md-nav__link">
+        0 Quick Start
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/WwZzz/easyFL" class="md-nav__link">
+        Github
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicClient" class="md-nav__link">
+    BasicClient
+  </a>
+  
+    <nav class="md-nav" aria-label="BasicClient">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicClient.get_batch_data" class="md-nav__link">
+    get_batch_data()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicClient.get_time_response" class="md-nav__link">
+    get_time_response()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicClient.is_dropped" class="md-nav__link">
+    is_dropped()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicClient.is_idle" class="md-nav__link">
+    is_idle()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicClient.is_working" class="md-nav__link">
+    is_working()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicClient.pack" class="md-nav__link">
+    pack()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicClient.register_server" class="md-nav__link">
+    register_server()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicClient.reply" class="md-nav__link">
+    reply()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicClient.set_batch_size" class="md-nav__link">
+    set_batch_size()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicClient.set_learning_rate" class="md-nav__link">
+    set_learning_rate()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicClient.set_local_epochs" class="md-nav__link">
+    set_local_epochs()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicClient.test" class="md-nav__link">
+    test()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicClient.train" class="md-nav__link">
+    train()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicClient.train_loss" class="md-nav__link">
+    train_loss()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicClient.unpack" class="md-nav__link">
+    unpack()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicClient.update_device" class="md-nav__link">
+    update_device()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicClient.valid_loss" class="md-nav__link">
+    valid_loss()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicParty" class="md-nav__link">
+    BasicParty
+  </a>
+  
+    <nav class="md-nav" aria-label="BasicParty">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicParty.communicate_with" class="md-nav__link">
+    communicate_with()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicParty.initialize" class="md-nav__link">
+    initialize()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicParty.message_handler" class="md-nav__link">
+    message_handler()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicParty.register_action_to_mtype" class="md-nav__link">
+    register_action_to_mtype()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicParty.register_objects" class="md-nav__link">
+    register_objects()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicParty.set_data" class="md-nav__link">
+    set_data()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicParty.set_id" class="md-nav__link">
+    set_id()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicParty.set_model" class="md-nav__link">
+    set_model()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicServer" class="md-nav__link">
+    BasicServer
+  </a>
+  
+    <nav class="md-nav" aria-label="BasicServer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicServer.available_clients" class="md-nav__link">
+    available_clients
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicServer.aggregate" class="md-nav__link">
+    aggregate()
+  </a>
+  
+    <nav class="md-nav" aria-label="aggregate()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicServer.aggregate--weighted_scale-uniform-default-weighted_com-original-fedavg-other" class="md-nav__link">
+    weighted_scale                 |uniform (default)          |weighted_com (original fedavg)   |other
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicServer.communicate" class="md-nav__link">
+    communicate()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicServer.communicate_with" class="md-nav__link">
+    communicate_with()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicServer.get_tolerance_for_latency" class="md-nav__link">
+    get_tolerance_for_latency()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicServer.global_lr_scheduler" class="md-nav__link">
+    global_lr_scheduler()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicServer.global_test" class="md-nav__link">
+    global_test()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicServer.init_algo_para" class="md-nav__link">
+    init_algo_para()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicServer.iterate" class="md-nav__link">
+    iterate()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicServer.pack" class="md-nav__link">
+    pack()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicServer.register_clients" class="md-nav__link">
+    register_clients()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicServer.run" class="md-nav__link">
+    run()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicServer.sample" class="md-nav__link">
+    sample()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicServer.test" class="md-nav__link">
+    test()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicServer.unpack" class="md-nav__link">
+    unpack()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flgo.algorithm.fedbase.BasicServer.wait_time" class="md-nav__link">
+    wait_time()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h1 id="flgo.algorithm.fedbase" class="doc doc-heading">
+          <code>flgo.algorithm.fedbase</code>
+
+
+</h1>
+
+  <div class="doc doc-contents first">
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="flgo.algorithm.fedbase.BasicClient" class="doc doc-heading">
+        <code>BasicClient</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+      <p class="doc doc-class-bases">
+        Bases: <code><a class="autorefs autorefs-internal" title="flgo.algorithm.fedbase.BasicParty" href="#flgo.algorithm.fedbase.BasicParty">BasicParty</a></code></p>
+
+
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="flgo.algorithm.fedbase.BasicClient.get_batch_data" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_batch_data</span><span class="p">()</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Get the batch of training data</p>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+          </td>
+          <td><p>a batch of data</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="flgo.algorithm.fedbase.BasicClient.get_time_response" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_time_response</span><span class="p">()</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Get the latency amount of the client</p>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+          </td>
+          <td><p>self.latency_amount if client not dropping out</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="flgo.algorithm.fedbase.BasicClient.is_dropped" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">is_dropped</span><span class="p">()</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Check if the client drops out during communicating.</p>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+          </td>
+          <td><p>True if the client was being dropped</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="flgo.algorithm.fedbase.BasicClient.is_idle" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">is_idle</span><span class="p">()</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Check if the client is available to participate training.</p>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+          </td>
+          <td><p>True if the client is available according to the active_rate else False</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="flgo.algorithm.fedbase.BasicClient.is_working" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">is_working</span><span class="p">()</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Check if the client is training the model.</p>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+          </td>
+          <td><p>True if the client is working</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="flgo.algorithm.fedbase.BasicClient.pack" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">pack</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Packing the package to be send to the server. The operations of compression
+of encryption of the package should be done here.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>model</code></td>
+          <td>
+          </td>
+          <td><p>the locally trained model</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>package</code></td>          <td>
+          </td>
+          <td><p>a dict that contains the necessary information for the server</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="flgo.algorithm.fedbase.BasicClient.register_server" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">register_server</span><span class="p">(</span><span class="n">server</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Register the server to self.server</p>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="flgo.algorithm.fedbase.BasicClient.reply" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">reply</span><span class="p">(</span><span class="n">svr_pkg</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Reply a package to the server. The whole local procedure should be defined here.
+The standard form consists of three procedure: unpacking the
+server_package to obtain the global model, training the global model,
+and finally packing the updated model into client_package.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>svr_pkg</code></td>
+          <td>
+                <code>dict</code>
+          </td>
+          <td><p>the package received from the server</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>client_pkg</code></td>          <td>
+                <code>dict</code>
+          </td>
+          <td><p>the package to be send to the server</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="flgo.algorithm.fedbase.BasicClient.set_batch_size" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">set_batch_size</span><span class="p">(</span><span class="n">batch_size</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Set local training batch size</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>batch_size</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td><p>the training batch size</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="flgo.algorithm.fedbase.BasicClient.set_learning_rate" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">set_learning_rate</span><span class="p">(</span><span class="n">lr</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Set the learning rate of local training</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>lr</code></td>
+          <td>
+                <code>float</code>
+          </td>
+          <td><p>a real number</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="flgo.algorithm.fedbase.BasicClient.set_local_epochs" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">set_local_epochs</span><span class="p">(</span><span class="n">epochs</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Set local training epochs</p>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="flgo.algorithm.fedbase.BasicClient.test" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">test</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">flag</span><span class="o">=</span><span class="s1">&#39;valid&#39;</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Evaluate the model on the dataset owned by the client</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>model</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" href="../../FLGo/#flgo">flgo</a>.<a class="autorefs autorefs-internal" title="flgo.utils" href="../../documents/#flgo.utils">utils</a>.<a class="autorefs autorefs-internal" title="flgo.utils.fmodule" href="../../utils/fmodule/#flgo.utils.fmodule">fmodule</a>.<a class="autorefs autorefs-internal" title="flgo.utils.fmodule.FModule" href="../../utils/fmodule/#flgo.utils.fmodule.FModule">FModule</a></code>
+          </td>
+          <td><p>the model need to be evaluated</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>flag</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>choose the data to evaluate the model</p></td>
+          <td>
+                <code>&#39;valid&#39;</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>metric</code></td>          <td>
+                <code>dict</code>
+          </td>
+          <td><p>the evaluating results (e.g. metric = {'loss':1.02})</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="flgo.algorithm.fedbase.BasicClient.train" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">train</span><span class="p">(</span><span class="n">model</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Standard local training procedure. Train the transmitted model with
+local training dataset.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>model</code></td>
+          <td>
+                <code>FModule</code>
+          </td>
+          <td><p>the global model</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="flgo.algorithm.fedbase.BasicClient.train_loss" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">train_loss</span><span class="p">(</span><span class="n">model</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Get the loss value of the model on local training data</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>model</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" href="../../FLGo/#flgo">flgo</a>.<a class="autorefs autorefs-internal" title="flgo.utils" href="../../documents/#flgo.utils">utils</a>.<a class="autorefs autorefs-internal" title="flgo.utils.fmodule" href="../../utils/fmodule/#flgo.utils.fmodule">fmodule</a>.<a class="autorefs autorefs-internal" title="flgo.utils.fmodule.FModule" href="../../utils/fmodule/#flgo.utils.fmodule.FModule">FModule</a> | torch.<span title="torch.nn">nn</span>.<span title="torch.nn.Module">Module</span></code>
+          </td>
+          <td><p>model</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+          </td>
+          <td><p>the training loss of model on self's training data</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="flgo.algorithm.fedbase.BasicClient.unpack" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">unpack</span><span class="p">(</span><span class="n">received_pkg</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Unpack the package received from the server</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>received_pkg</code></td>
+          <td>
+                <code>dict</code>
+          </td>
+          <td><p>a dict contains the global model as default</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+          </td>
+          <td><p>the unpacked information</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="flgo.algorithm.fedbase.BasicClient.update_device" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">update_device</span><span class="p">(</span><span class="n">dev</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Update running-time GPU device to dev</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>dev</code></td>
+          <td>
+                <code>torch.<span title="torch.device">device</span></code>
+          </td>
+          <td><p>target dev</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="flgo.algorithm.fedbase.BasicClient.valid_loss" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">valid_loss</span><span class="p">(</span><span class="n">model</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Get the loss value of the model on local validating data</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>model</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" href="../../FLGo/#flgo">flgo</a>.<a class="autorefs autorefs-internal" title="flgo.utils" href="../../documents/#flgo.utils">utils</a>.<a class="autorefs autorefs-internal" title="flgo.utils.fmodule" href="../../utils/fmodule/#flgo.utils.fmodule">fmodule</a>.<a class="autorefs autorefs-internal" title="flgo.utils.fmodule.FModule" href="../../utils/fmodule/#flgo.utils.fmodule.FModule">FModule</a> | torch.<span title="torch.nn">nn</span>.<span title="torch.nn.Module">Module</span></code>
+          </td>
+          <td><p>model</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+          </td>
+          <td><p>the validation loss of model on self's validation data</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="flgo.algorithm.fedbase.BasicParty" class="doc doc-heading">
+        <code>BasicParty</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+
+
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="flgo.algorithm.fedbase.BasicParty.communicate_with" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">communicate_with</span><span class="p">(</span><span class="n">target_id</span><span class="p">,</span> <span class="n">package</span><span class="o">=</span><span class="p">{})</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Send the package to target object according to its id, and receive the response from it</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>target_id</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td><p>the id of the object to communicate with</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>package</code></td>
+          <td>
+                <code>dict</code>
+          </td>
+          <td><p>the package to be sended to the object</p></td>
+          <td>
+                <code>{}</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>client_package</code></td>          <td>
+                <code>dict</code>
+          </td>
+          <td><p>the reply from the target object and will be 'None' if losing connection</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="flgo.algorithm.fedbase.BasicParty.initialize" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">initialize</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>API for customizing the initializing process of the object</p>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="flgo.algorithm.fedbase.BasicParty.message_handler" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">message_handler</span><span class="p">(</span><span class="n">package</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Handling the received message by excuting the corresponding action.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>package</code></td>
+          <td>
+                <code>dict</code>
+          </td>
+          <td><p>the package received from other parties (i.e. the content of the message)</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+          </td>
+          <td><p>action_reult</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="flgo.algorithm.fedbase.BasicParty.register_action_to_mtype" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">register_action_to_mtype</span><span class="p">(</span><span class="n">action_name</span><span class="p">,</span> <span class="n">mtype</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Register an existing method as the action corresponding to the message type.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>action_name</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>the name of the instance method</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>mtype</code></td>
+          <td>
+          </td>
+          <td><p>the message type</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="flgo.algorithm.fedbase.BasicParty.register_objects" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">register_objects</span><span class="p">(</span><span class="n">parties</span><span class="p">,</span> <span class="n">parties_name</span><span class="o">=</span><span class="s1">&#39;parties&#39;</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Set self's attribute party_names (e.g. parties as default) to be parties if
+self has no attribute named party_names. Otherwise, parties will be extend to
+the attribute party_names of self.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>parties</code></td>
+          <td>
+                <code>list</code>
+          </td>
+          <td><p>a list of objects</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>parties_name</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>the name of attribute to store parties</p></td>
+          <td>
+                <code>&#39;parties&#39;</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+      <p>Example::
+    &gt;&gt;&gt; a = BasicParty()
+    &gt;&gt;&gt; b = BasicParty()
+    &gt;&gt;&gt; c = BasicParty()
+    &gt;&gt;&gt; a.register_objects([b, c], 'parties')
+    &gt;&gt;&gt; a.parties # will be [b,c]
+    &gt;&gt;&gt; d = BasicParty()
+    &gt;&gt;&gt; a.register_objects([d], 'parties')
+    &gt;&gt;&gt; a.parties # will be [b,c,d]</p>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="flgo.algorithm.fedbase.BasicParty.set_data" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">set_data</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">flag</span><span class="o">=</span><span class="s1">&#39;train&#39;</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Set self's attibute 'xxx_data' to be data where xxx is the flag. For example,
+after calling self.set_data([1,2,3], 'test'), self.test_data will be [1,2,3].
+Particularly, If the flag is 'train', the batchsize and the num_steps will be
+reset.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>data</code></td>
+          <td>
+          </td>
+          <td><p>anything</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>flag</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>the name of the data</p></td>
+          <td>
+                <code>&#39;train&#39;</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="flgo.algorithm.fedbase.BasicParty.set_id" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">set_id</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Set self's attibute 'id' to be id where self.id = id</p>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="flgo.algorithm.fedbase.BasicParty.set_model" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">set_model</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">model_name</span><span class="o">=</span><span class="s1">&#39;model&#39;</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Set self's attibute 'model_name' to be model. For example,
+after calling self.set_model(my_model, 'model'), self.model will be my_model.</p>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="flgo.algorithm.fedbase.BasicServer" class="doc doc-heading">
+        <code>BasicServer</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+      <p class="doc doc-class-bases">
+        Bases: <code><a class="autorefs autorefs-internal" title="flgo.algorithm.fedbase.BasicParty" href="#flgo.algorithm.fedbase.BasicParty">BasicParty</a></code></p>
+
+
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="flgo.algorithm.fedbase.BasicServer.available_clients" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">available_clients</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Return all the available clients at the current round.</p>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+          </td>
+          <td><p>a list of indices of currently available clients</p></td>
+        </tr>
+    </tbody>
+  </table>
+  </div>
+
+</div>
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="flgo.algorithm.fedbase.BasicServer.aggregate" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">aggregate</span><span class="p">(</span><span class="n">models</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Aggregate the locally trained models into the new one. The aggregation
+will be according to self.aggregate_option where</p>
+<p>pk = nk/n where n=self.data_vol
+K = |S_t|
+N = |S|</p>
+<hr />
+<h4 id="flgo.algorithm.fedbase.BasicServer.aggregate--weighted_scale-uniform-default-weighted_com-original-fedavg-other">weighted_scale                 |uniform (default)          |weighted_com (original fedavg)   |other</h4>
+<p>N/K * Σpk * model_k             |1/K * Σmodel_k             |(1-Σpk) * w_old + Σpk * model_k  |Σ(pk/Σpk) * model_k</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>models</code></td>
+          <td>
+                <code>list</code>
+          </td>
+          <td><p>a list of local models</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+          </td>
+          <td><p>the aggregated model</p></td>
+        </tr>
+    </tbody>
+  </table>
+      <p>Example::
+    &gt;&gt;&gt; models = [m1, m2] # m1, m2 are models with the same architecture
+    &gt;&gt;&gt; m_new = self.aggregate(models)</p>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="flgo.algorithm.fedbase.BasicServer.communicate" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">communicate</span><span class="p">(</span><span class="n">selected_clients</span><span class="p">,</span> <span class="n">mtype</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">asynchronous</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>The whole simulating communication procedure with the selected clients.
+This part supports for simulating the client dropping out.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>selected_clients</code></td>
+          <td>
+                <code>list of int</code>
+          </td>
+          <td><p>the clients to communicate with</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>mtype</code></td>
+          <td>
+                <code>anytype</code>
+          </td>
+          <td><p>type of message</p></td>
+          <td>
+                <code>0</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>asynchronous</code></td>
+          <td>
+                <code>bool</code>
+          </td>
+          <td><p>asynchronous communciation or synchronous communcation</p></td>
+          <td>
+                <code>False</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+          </td>
+          <td><p>the unpacked response from clients that is created ny self.unpack()</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="flgo.algorithm.fedbase.BasicServer.communicate_with" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">communicate_with</span><span class="p">(</span><span class="n">target_id</span><span class="p">,</span> <span class="n">package</span><span class="o">=</span><span class="p">{})</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Communicate with the object under system simulator that simulates the
+network latency. Send the package to target object according to its id,
+and receive the response from it</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>target_id</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td><p>the id of the object to communicate with</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>package</code></td>
+          <td>
+                <code>dict</code>
+          </td>
+          <td><p>the package to be sended to the object</p></td>
+          <td>
+                <code>{}</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>client_package</code></td>          <td>
+                <code>dict</code>
+          </td>
+          <td><p>the reply from the target object and</p></td>
+        </tr>
+        <tr>
+<td></td>          <td>
+          </td>
+          <td><p>will be 'None' if losing connection</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="flgo.algorithm.fedbase.BasicServer.get_tolerance_for_latency" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_tolerance_for_latency</span><span class="p">()</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Get the tolerance for latency of waiting for clients' responses</p>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+          </td>
+          <td><p>a int number (i.e. self.tolerance_for_latency)</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="flgo.algorithm.fedbase.BasicServer.global_lr_scheduler" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">global_lr_scheduler</span><span class="p">(</span><span class="n">current_round</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Control the step size (i.e. learning rate) of local training</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>current_round</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td><p>the current communication round</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="flgo.algorithm.fedbase.BasicServer.global_test" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">global_test</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">flag</span><span class="o">=</span><span class="s1">&#39;valid&#39;</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Collect local testing result of all the clients.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>model</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" href="../../FLGo/#flgo">flgo</a>.<a class="autorefs autorefs-internal" title="flgo.utils" href="../../documents/#flgo.utils">utils</a>.<a class="autorefs autorefs-internal" title="flgo.utils.fmodule" href="../../utils/fmodule/#flgo.utils.fmodule">fmodule</a>.<a class="autorefs autorefs-internal" title="flgo.utils.fmodule.FModule" href="../../utils/fmodule/#flgo.utils.fmodule.FModule">FModule</a> | torch.<span title="torch.nn">nn</span>.<span title="torch.nn.Module">Module</span></code>
+          </td>
+          <td><p>the model to be sevaluated</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>flag</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>choose the data to evaluate the model</p></td>
+          <td>
+                <code>&#39;valid&#39;</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>metrics</code></td>          <td>
+                <code>dict</code>
+          </td>
+          <td><p>a dict contains key-value pairs like (metric_name,</p></td>
+        </tr>
+        <tr>
+<td></td>          <td>
+          </td>
+          <td><p>the lists of metric results of the clients)</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="flgo.algorithm.fedbase.BasicServer.init_algo_para" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">init_algo_para</span><span class="p">(</span><span class="n">algo_para</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Initialize the algorithm-dependent hyper-parameters for the server and all the clients.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>algo_paras</code></td>
+          <td>
+                <code>dict</code>
+          </td>
+          <td><p>the dict that defines the hyper-parameters (i.e. name, value and type) for the algorithm.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+      <p>Example::
+    &gt;&gt;&gt; # s is an instance of Server and s.clients are instances of Client
+    &gt;&gt;&gt; s.u # will raise error
+    &gt;&gt;&gt; [c.u for c in s.clients] # will raise errors too
+    &gt;&gt;&gt; s.init_algo_para({'u': 0.1})
+    &gt;&gt;&gt; s.u # will be 0.1
+    &gt;&gt;&gt; [c.u for c in s.clients] # will be [0.1, 0.1,..., 0.1]</p>
+
+<details class="note">
+  <summary>Note</summary>
+  <p>Once <code>option['algo_para']</code> is not <code>None</code>, the value of the pre-defined hyperparameters will be replaced by the list of values in <code>option['algo_para']</code>,
+which requires the length of <code>option['algo_para']</code> is equal to the length of <code>algo_paras</code></p>
+</details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="flgo.algorithm.fedbase.BasicServer.iterate" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">iterate</span><span class="p">()</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>The standard iteration of each federated communication round that contains three
+necessary procedure in FL: client selection, communication and model aggregation.</p>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+          </td>
+          <td><p>False if the global model is not updated in this iteration</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="flgo.algorithm.fedbase.BasicServer.pack" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">pack</span><span class="p">(</span><span class="n">client_id</span><span class="p">,</span> <span class="n">mtype</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Pack the necessary information for the client's local training.
+Any operations of compression or encryption should be done here.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>client_id</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td><p>the id of the client to communicate with</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>mtype</code></td>
+          <td>
+          </td>
+          <td><p>the message type</p></td>
+          <td>
+                <code>0</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+          </td>
+          <td><p>a dict contains necessary information (e.g. a copy of the global model as default)</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="flgo.algorithm.fedbase.BasicServer.register_clients" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">register_clients</span><span class="p">(</span><span class="n">clients</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Regiser clients to self.clients, and update related attributes (e.g. self.num_clients)</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>clients</code></td>
+          <td>
+                <code>list</code>
+          </td>
+          <td><p>a list of objects</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="flgo.algorithm.fedbase.BasicServer.run" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">run</span><span class="p">()</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Running the FL symtem where the global model is trained and evaluated iteratively.</p>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="flgo.algorithm.fedbase.BasicServer.sample" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">sample</span><span class="p">()</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Sample the clients. There are three types of sampling manners:
+full sample, uniform sample without replacement, and MDSample
+with replacement. Particularly, if 'available' is in self.sample_option,
+the server will only sample from currently available clients.</p>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+          </td>
+          <td><p>a list of the ids of the selected clients</p></td>
+        </tr>
+    </tbody>
+  </table>
+      <p>Example::
+    &gt;&gt;&gt; selected_clients=self.sample()
+    &gt;&gt;&gt; selected_clients
+    &gt;&gt;&gt; # The selected_clients is a list of clients' ids</p>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="flgo.algorithm.fedbase.BasicServer.test" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">test</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">flag</span><span class="o">=</span><span class="s1">&#39;test&#39;</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Evaluate the model on the test dataset owned by the server.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>model</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" href="../../FLGo/#flgo">flgo</a>.<a class="autorefs autorefs-internal" title="flgo.utils" href="../../documents/#flgo.utils">utils</a>.<a class="autorefs autorefs-internal" title="flgo.utils.fmodule" href="../../utils/fmodule/#flgo.utils.fmodule">fmodule</a>.<a class="autorefs autorefs-internal" title="flgo.utils.fmodule.FModule" href="../../utils/fmodule/#flgo.utils.fmodule.FModule">FModule</a></code>
+          </td>
+          <td><p>the model need to be evaluated</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>flag</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>choose the data to evaluate the model</p></td>
+          <td>
+                <code>&#39;test&#39;</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+      <p>Returns::
+    metrics (dict): the dict contains the evaluating results</p>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="flgo.algorithm.fedbase.BasicServer.unpack" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">unpack</span><span class="p">(</span><span class="n">packages_received_from_clients</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Unpack the information from the received packages. Return models and losses as default.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>packages_received_from_clients</code></td>
+          <td>
+                <code>list</code>
+          </td>
+          <td><p>a list of packages</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+      <p>Returns::
+    res (dict): collections.defaultdict that contains several lists of the clients' reply</p>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="flgo.algorithm.fedbase.BasicServer.wait_time" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">wait_time</span><span class="p">(</span><span class="n">t</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Wait for the time of the virtual clock to pass t units</p>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.407015b8.min.js"></script>
+      
+    
+  </body>
+</html>
