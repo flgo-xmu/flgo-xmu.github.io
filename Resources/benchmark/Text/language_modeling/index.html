@@ -72,6 +72,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#overview" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1709,12 +1714,20 @@
             
           
         
+          
+        
+          
+        
       
       
         
         
         <div class="md-nav__link md-nav__link--index ">
           <a href="../../../../Tutorials/2_Algorithm_Customization/">2 Algorithm Customization</a>
+          
+            <label for="__nav_4_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
           
         </div>
       
@@ -1725,6 +1738,34 @@
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Tutorials/2_Algorithm_Customization/2.1_General_Paradigm/" class="md-nav__link">
+        2.1 General Paradigm
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Tutorials/2_Algorithm_Customization/2.2_Local_Training_FedProx/" class="md-nav__link">
+        2.2 Local Training
+      </a>
+    </li>
+  
+
             
           
         </ul>
@@ -1941,7 +1982,7 @@
   
     <li class="md-nav__item">
       <a href="../../../algorithm/horizontal/" class="md-nav__link">
-        Horizontal FL
+        Horizontal
       </a>
     </li>
   
@@ -2169,6 +2210,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
       <a href="./" class="md-nav__link md-nav__link--active">
         Language Modeling
@@ -2380,6 +2423,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -2394,9 +2439,136 @@
                   
 
 
-  <h1>Language Modeling</h1>
+<h1 id="overview">Overview</h1>
+<table>
+<thead>
+<tr>
+<th><strong>Name</strong></th>
+<th><strong>Dataset</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Scene</strong></th>
+<th><strong>Download</strong></th>
+<th><strong>Remark</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>penntreebank_modeling</td>
+<td><a href="">PennTreebank</a></td>
+<td><a href="#penntreebank_modeling">See here</a></td>
+<td>Horizontal FL</td>
+<td><a href="https://github.com/WwZzz/easyFL/raw/FLGo/resources/benchmark/penntreebank_modeling.zip">Click Here</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td>wikitext2_modeling</td>
+<td><a href="">WikiText2</a></td>
+<td><a href="#wikitext2_modeling">See here</a></td>
+<td>Horizontal FL</td>
+<td><a href="https://github.com/WwZzz/easyFL/raw/FLGo/resources/benchmark/wikitext2_modeling.zip">Click Here</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="details">Details</h1>
+<h2 id="penntreebank_modeling"><strong>penntreebank_modeling</strong></h2>
+<div id="penntreebank_modeling"></div>
 
-
+<h3 id="model">model</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Model Name</strong></th>
+<th><strong>Non-Fed Performance</strong></th>
+<th><strong>NumPara</strong></th>
+<th><strong>Implementation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Transformer</td>
+<td>-</td>
+<td></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="supported-partitioner">supported partitioner</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>IsDefault</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IIDPartitioner</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>DiversityPartitioner</td>
+<td></td>
+<td>Partitioning according to label diversity</td>
+</tr>
+<tr>
+<td>DirichletPartitioner</td>
+<td></td>
+<td>Partitioning according to dir. distribution of labels</td>
+</tr>
+</tbody>
+</table>
+<h2 id="wikitext2_modeling"><strong>wikitext2_modeling</strong></h2>
+<div id="wikitext2_modeling"></div>
+<p>-</p>
+<h3 id="model_1">model</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Model Name</strong></th>
+<th><strong>Non-Fed Performance</strong></th>
+<th><strong>NumPara</strong></th>
+<th><strong>Implementation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Transformer</td>
+<td>-</td>
+<td></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="supported-partitioner_1">supported partitioner</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>IsDefault</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IIDPartitioner</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>DiversityPartitioner</td>
+<td></td>
+<td>Partitioning according to label diversity</td>
+</tr>
+<tr>
+<td>DirichletPartitioner</td>
+<td></td>
+<td>Partitioning according to dir. distribution of labels</td>
+</tr>
+</tbody>
+</table>
 
 
 

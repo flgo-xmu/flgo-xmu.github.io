@@ -72,6 +72,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#overview" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1709,12 +1714,20 @@
             
           
         
+          
+        
+          
+        
       
       
         
         
         <div class="md-nav__link md-nav__link--index ">
           <a href="../../../../Tutorials/2_Algorithm_Customization/">2 Algorithm Customization</a>
+          
+            <label for="__nav_4_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
           
         </div>
       
@@ -1725,6 +1738,34 @@
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Tutorials/2_Algorithm_Customization/2.1_General_Paradigm/" class="md-nav__link">
+        2.1 General Paradigm
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Tutorials/2_Algorithm_Customization/2.2_Local_Training_FedProx/" class="md-nav__link">
+        2.2 Local Training
+      </a>
+    </li>
+  
+
             
           
         </ul>
@@ -1941,7 +1982,7 @@
   
     <li class="md-nav__item">
       <a href="../../../algorithm/horizontal/" class="md-nav__link">
-        Horizontal FL
+        Horizontal
       </a>
     </li>
   
@@ -2255,6 +2296,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
       <a href="./" class="md-nav__link md-nav__link--active">
         Link Prediction
@@ -2380,6 +2423,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -2394,9 +2439,211 @@
                   
 
 
-  <h1>Link Prediction</h1>
+<h1 id="overview">Overview</h1>
+<table>
+<thead>
+<tr>
+<th><strong>Name</strong></th>
+<th><strong>Dataset</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Scene</strong></th>
+<th><strong>Download</strong></th>
+<th><strong>Remark</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>citeseer_link_prediction</td>
+<td><a href="https://www.cs.toronto.edu/~kriz/cifar.html">Citeseer</a></td>
+<td><a href="#citeseer_link_prediction">See here</a></td>
+<td>Horizontal FL</td>
+<td><a href="https://github.com/WwZzz/easyFL/raw/FLGo/resources/benchmark/citeseer_link_prediction.zip">Click Here</a></td>
+<td></td>
+</tr>
+<tr>
+<td>cora_link_prediction</td>
+<td><a href="http://yann.lecun.com/exdb/mnist/">Cora</a></td>
+<td><a href="#cora_link_prediction">See here</a></td>
+<td>Horizontal FL</td>
+<td><a href="https://github.com/WwZzz/easyFL/raw/FLGo/resources/benchmark/cora_link_prediction.zip">Click Here</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td>pubmed_link_prediction</td>
+<td><a href="https://www.cs.toronto.edu/~kriz/cifar.html">PubMed</a></td>
+<td><a href="#pubmed_link_prediction">See here</a></td>
+<td>Horizontal FL</td>
+<td><a href="https://github.com/WwZzz/easyFL/raw/FLGo/resources/benchmark/pubmed_link_prediction.zip">Click Here</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="details">Details</h1>
+<h2 id="citeseer_link_prediction"><strong>citeseer_link_prediction</strong></h2>
+<div id="citeseer_link_prediction"></div>
 
+<h3 id="model">model</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Model Name</strong></th>
+<th><strong>Non-Fed Performance</strong></th>
+<th><strong>NumPara</strong></th>
+<th><strong>Implementation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cnn</td>
+<td>-</td>
+<td></td>
+<td>-</td>
+</tr>
+<tr>
+<td>mlp</td>
+<td>-</td>
+<td></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="supported-partitioner">supported partitioner</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>IsDefault</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IIDPartitioner</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>DiversityPartitioner</td>
+<td></td>
+<td>Partitioning according to label diversity</td>
+</tr>
+<tr>
+<td>DirichletPartitioner</td>
+<td></td>
+<td>Partitioning according to dir. distribution of labels</td>
+</tr>
+</tbody>
+</table>
+<h2 id="cora_link_prediction"><strong>cora_link_prediction</strong></h2>
+<div id="cora_link_prediction"></div>
 
+<h3 id="model_1">model</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Model Name</strong></th>
+<th><strong>Non-Fed Performance</strong></th>
+<th><strong>NumPara</strong></th>
+<th><strong>Implementation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cnn</td>
+<td>-</td>
+<td></td>
+<td>-</td>
+</tr>
+<tr>
+<td>mlp</td>
+<td>-</td>
+<td></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="supported-partitioner_1">supported partitioner</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>IsDefault</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IIDPartitioner</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>DiversityPartitioner</td>
+<td></td>
+<td>Partitioning according to label diversity</td>
+</tr>
+<tr>
+<td>DirichletPartitioner</td>
+<td></td>
+<td>Partitioning according to dir. distribution of labels</td>
+</tr>
+</tbody>
+</table>
+<h2 id="pubmed_link_prediction"><strong>pubmed_link_prediction</strong></h2>
+<div id="pubmed_link_prediction"></div>
+
+<h3 id="model_2">model</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Model Name</strong></th>
+<th><strong>Non-Fed Performance</strong></th>
+<th><strong>NumPara</strong></th>
+<th><strong>Implementation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cnn</td>
+<td>-</td>
+<td></td>
+<td>-</td>
+</tr>
+<tr>
+<td>mlp</td>
+<td>-</td>
+<td></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="supported-partitioner_2">supported partitioner</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>IsDefault</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IIDPartitioner</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>DiversityPartitioner</td>
+<td></td>
+<td>Partitioning according to label diversity</td>
+</tr>
+<tr>
+<td>DirichletPartitioner</td>
+<td></td>
+<td>Partitioning according to dir. distribution of labels</td>
+</tr>
+</tbody>
+</table>
 
 
 

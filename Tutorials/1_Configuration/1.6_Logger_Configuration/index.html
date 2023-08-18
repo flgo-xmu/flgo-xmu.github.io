@@ -1755,12 +1755,20 @@
             
           
         
+          
+        
+          
+        
       
       
         
         
         <div class="md-nav__link md-nav__link--index ">
           <a href="../../2_Algorithm_Customization/">2 Algorithm Customization</a>
+          
+            <label for="__nav_4_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
           
         </div>
       
@@ -1771,6 +1779,34 @@
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2_Algorithm_Customization/2.1_General_Paradigm/" class="md-nav__link">
+        2.1 General Paradigm
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2_Algorithm_Customization/2.2_Local_Training_FedProx/" class="md-nav__link">
+        2.2 Local Training
+      </a>
+    </li>
+  
+
             
           
         </ul>
@@ -1987,7 +2023,7 @@
   
     <li class="md-nav__item">
       <a href="../../../Resources/algorithm/horizontal/" class="md-nav__link">
-        Horizontal FL
+        Horizontal
       </a>
     </li>
   
@@ -2451,7 +2487,6 @@
 
 <h1 id="16-logger-customization">1.6 Logger Customization</h1>
 <p>This section introduces the usage of <code>Logger</code>. <code>Logger</code> is responsble for recording running-time variables of interest that can be very dependent on personal usage. We offer three key APIs to support different experiment purposes.</p>
-<p><img alt="Figure2" src="../../img/overview_exp.png" /></p>
 <pre><code class="language-python">import flgo.experiment.logger as fel
 class Logger(fel.BasicLogger):
     def initialize(self):

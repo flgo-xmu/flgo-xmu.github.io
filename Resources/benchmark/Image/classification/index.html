@@ -1714,12 +1714,20 @@
             
           
         
+          
+        
+          
+        
       
       
         
         
         <div class="md-nav__link md-nav__link--index ">
           <a href="../../../../Tutorials/2_Algorithm_Customization/">2 Algorithm Customization</a>
+          
+            <label for="__nav_4_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
           
         </div>
       
@@ -1730,6 +1738,34 @@
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Tutorials/2_Algorithm_Customization/2.1_General_Paradigm/" class="md-nav__link">
+        2.1 General Paradigm
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Tutorials/2_Algorithm_Customization/2.2_Local_Training_FedProx/" class="md-nav__link">
+        2.2 Local Training
+      </a>
+    </li>
+  
+
             
           
         </ul>
@@ -1946,7 +1982,7 @@
   
     <li class="md-nav__item">
       <a href="../../../algorithm/horizontal/" class="md-nav__link">
-        Horizontal FL
+        Horizontal
       </a>
     </li>
   
@@ -2412,7 +2448,7 @@
 <th><strong>Description</strong></th>
 <th><strong>Scene</strong></th>
 <th><strong>Download</strong></th>
-<th><strong>Comment</strong></th>
+<th><strong>Remark</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -2425,12 +2461,36 @@
 <td>-</td>
 </tr>
 <tr>
+<td>cifar10_classification</td>
+<td><a href="https://www.cs.toronto.edu/~kriz/cifar.html">CIFAR10</a></td>
+<td><a href="#cifar10_classification">See here</a></td>
+<td>Horizontal FL</td>
+<td><a href="https://github.com/WwZzz/easyFL/raw/FLGo/resources/benchmark/cifar10_classification.zip">Click Here</a></td>
 <td></td>
+</tr>
+<tr>
+<td>cifar100_classification</td>
+<td><a href="https://www.cs.toronto.edu/~kriz/cifar.html">CIFAR100</a></td>
+<td><a href="#cifar100_classification">See here</a></td>
+<td>Horizontal FL</td>
+<td><a href="https://github.com/WwZzz/easyFL/raw/FLGo/resources/benchmark/cifar100_classification.zip">Click Here</a></td>
 <td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+</tr>
+<tr>
+<td>svhn_classification</td>
+<td><a href="http://ufldl.stanford.edu/housenumbers/">SVHN</a></td>
+<td><a href="#svhn_classification">See here</a></td>
+<td>Horizontal FL</td>
+<td><a href="https://github.com/WwZzz/easyFL/raw/FLGo/resources/benchmark/svhn_classification.zip">Click Here</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td>fashion_classification</td>
+<td><a href="https://github.com/zalandoresearch/fashion-mnist">FASHION</a></td>
+<td><a href="#fashion_classification">See here</a></td>
+<td>Horizontal FL</td>
+<td><a href="https://github.com/WwZzz/easyFL/raw/FLGo/resources/benchmark/fashion_classification.zip">Click Here</a></td>
+<td>-</td>
 </tr>
 </tbody>
 </table>
@@ -2464,6 +2524,220 @@
 </tbody>
 </table>
 <h3 id="supported-partitioner">supported partitioner</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>IsDefault</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IIDPartitioner</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>DiversityPartitioner</td>
+<td></td>
+<td>Partitioning according to label diversity</td>
+</tr>
+<tr>
+<td>DirichletPartitioner</td>
+<td></td>
+<td>Partitioning according to dir. distribution of labels</td>
+</tr>
+</tbody>
+</table>
+<h2 id="cifar10_classification"><strong>cifar10_classification</strong></h2>
+<div id="cifar10_classification"></div>
+<p>Federated CIFAR10 classification is a commonly used benchmark in FL. It assumes different virtual clients having non-overlapping samples from CIFAR10 dataset.</p>
+<h3 id="model_1">model</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Model Name</strong></th>
+<th><strong>Non-Fed Performance</strong></th>
+<th><strong>NumPara</strong></th>
+<th><strong>Implementation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cnn</td>
+<td>-</td>
+<td></td>
+<td>-</td>
+</tr>
+<tr>
+<td>mlp</td>
+<td>-</td>
+<td></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="supported-partitioner_1">supported partitioner</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>IsDefault</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IIDPartitioner</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>DiversityPartitioner</td>
+<td></td>
+<td>Partitioning according to label diversity</td>
+</tr>
+<tr>
+<td>DirichletPartitioner</td>
+<td></td>
+<td>Partitioning according to dir. distribution of labels</td>
+</tr>
+</tbody>
+</table>
+<h2 id="cifar100_classification"><strong>cifar100_classification</strong></h2>
+<div id="cifar100_classification"></div>
+<p>Federated CIFAR100 classification is a commonly used benchmark in FL. It assumes different virtual clients having non-overlapping samples from CIFAR100 dataset.</p>
+<h3 id="model_2">model</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Model Name</strong></th>
+<th><strong>Non-Fed Performance</strong></th>
+<th><strong>NumPara</strong></th>
+<th><strong>Implementation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cnn</td>
+<td>-</td>
+<td></td>
+<td>-</td>
+</tr>
+<tr>
+<td>mlp</td>
+<td>-</td>
+<td></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="supported-partitioner_2">supported partitioner</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>IsDefault</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IIDPartitioner</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>DiversityPartitioner</td>
+<td></td>
+<td>Partitioning according to label diversity</td>
+</tr>
+<tr>
+<td>DirichletPartitioner</td>
+<td></td>
+<td>Partitioning according to dir. distribution of labels</td>
+</tr>
+</tbody>
+</table>
+<h2 id="svhn_classification"><strong>svhn_classification</strong></h2>
+<div id="svhn_classification"></div>
+<p>Federated SVHN classification is a commonly used benchmark in FL. It assumes different virtual clients having non-overlapping samples from SVHN dataset.</p>
+<h3 id="model_3">model</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Model Name</strong></th>
+<th><strong>Non-Fed Performance</strong></th>
+<th><strong>NumPara</strong></th>
+<th><strong>Implementation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cnn</td>
+<td>-</td>
+<td></td>
+<td>-</td>
+</tr>
+<tr>
+<td>mlp</td>
+<td>-</td>
+<td></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="supported-partitioner_3">supported partitioner</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>IsDefault</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IIDPartitioner</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>DiversityPartitioner</td>
+<td></td>
+<td>Partitioning according to label diversity</td>
+</tr>
+<tr>
+<td>DirichletPartitioner</td>
+<td></td>
+<td>Partitioning according to dir. distribution of labels</td>
+</tr>
+</tbody>
+</table>
+<h2 id="fashion_classification"><strong>fashion_classification</strong></h2>
+<div id="fashion_classification"></div>
+<p>Federated Fashion classification is a commonly used benchmark in FL. It assumes different virtual clients having non-overlapping samples from FashionMNIST dataset.</p>
+<h3 id="model_4">model</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Model Name</strong></th>
+<th><strong>Non-Fed Performance</strong></th>
+<th><strong>NumPara</strong></th>
+<th><strong>Implementation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>lr</td>
+<td>-</td>
+<td></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="supported-partitioner_4">supported partitioner</h3>
 <table>
 <thead>
 <tr>
