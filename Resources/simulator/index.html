@@ -12,7 +12,7 @@
         <link rel="prev" href="../benchmark/Graph/link_prediction/">
       
       
-        <link rel="next" href="../../about/">
+        <link rel="next" href="horizontal/">
       
       <link rel="icon" href="../../img/flgo_icon.ico">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.5">
@@ -71,6 +71,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#usage" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -2594,12 +2599,18 @@
             
           
         
+          
+        
       
       
         
         
         <div class="md-nav__link md-nav__link--index md-nav__link--active">
           <a href="./">Simulator</a>
+          
+            <label for="__nav_5_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
           
         </div>
       
@@ -2610,6 +2621,20 @@
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="horizontal/" class="md-nav__link">
+        Horizontal
+      </a>
+    </li>
+  
+
             
           
         </ul>
@@ -2672,6 +2697,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -2686,9 +2713,31 @@
                   
 
 
-  <h1>Usage</h1>
+<h1 id="usage">Usage</h1>
+<p>Each simulator is a new defined class inheriting from <code>flgo.simulator.base.BasicSimulator</code>. To use simulators here, please follow the two steps below</p>
+<ol>
+<li>
+<p>Copy the source code of simulator</p>
+</li>
+<li>
+<p>Write codes as follows to use it</p>
+</li>
+</ol>
+<pre><code class="language-python">import flgo
+import flgo.simulator.base
+import mnist_classification
 
+#### 1. Paste Souce code here ##########################
+class MySimulator(flgo.simulator.base.BasicSimulator):
+    ...
+########################################################
+task = './test_mnist_download'
+flgo.gen_task({'benchmark': mnist_classification}, task)
+import flgo.algorithm.fedavg as fedavg
 
+##### 2. Specify simulator here by para Simulator in flgo.init######
+flgo.init(task, fedavg, {'gpu':0}, Simulator=MySimulator).run()
+</code></pre>
 
 
 
