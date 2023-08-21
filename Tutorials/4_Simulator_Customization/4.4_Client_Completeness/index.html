@@ -9,6 +9,10 @@
       
       
       
+        <link rel="prev" href="../4.3_Client_Responsiveness/">
+      
+      
+        <link rel="next" href="../../../Resources/">
       
       <link rel="icon" href="../../../img/flgo_icon.ico">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.5">
@@ -67,6 +71,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#incomplete-local-training" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -242,13 +251,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../" class="md-tabs__link">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
         Tutorials
       </a>
     </li>
@@ -1467,16 +1478,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-        
-      
-      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
       
       
         
@@ -1507,7 +1518,7 @@
           
         </div>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           Tutorials
@@ -2012,18 +2023,18 @@
               
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
       
       
-        
-      
-      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_6" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" checked>
       
       
         
@@ -2052,7 +2063,7 @@
           
         </div>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_4_6">
           <span class="md-nav__icon md-icon"></span>
           4 Simulator Customization
@@ -2107,11 +2118,21 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../4.4_Client_Conpleteness.md" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         4.4 Client Completeness
       </a>
+      
     </li>
   
 
@@ -2686,6 +2707,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -2700,10 +2723,82 @@
                   
 
 
-  <h1>4.4 Client Completeness</h1>
+<h1 id="incomplete-local-training">Incomplete Local Training</h1>
+<p>This type of system heterogeneity means clients may not be able to finish all the local training epochs, which can cause objective inconsistency and degrade the model performance.
+To model this type of heterogeneity, we use variable <code>working_amount</code> to control the number of realistic training iterations of clients.
+Values of this variable can be arbitrarily set by API <code>Simulator.set_variable(client_ids: List[Any], 'working_amount', values)</code></p>
+<h1 id="example">Example</h1>
+<p>We show the usage of this part by the following example. We use Synthetic dataset and compare baselines FedAvg, FedProx, and FedNova.</p>
+<pre><code class="language-python">import flgo.algorithm.fedavg as fedavg
+import flgo.algorithm.fedprox as fedprox
+import flgo.algorithm.fednova as fednova
+import flgo.experiment.analyzer
+import flgo.experiment.logger as fel
+import flgo.simulator.base
+import flgo.benchmark.synthetic_regression as synthetic
+import numpy as np
+import os
+import flgo.simulator.base
+# 1. Construct the Simulator
+class CMPSimulator(flgo.simulator.base.BasicSimulator):
+    def update_client_completeness(self, client_ids):
+        if not hasattr(self, '_my_working_amount'):
+            rs = np.random.normal(1.0, 1.0, len(self.clients))
+            rs = rs.clip(0.01, 2)
+            self._my_working_amount = {cid:max(int(r*self.clients[cid].num_steps),1) for  cid,r in zip(self.clients, rs)}
+            print(self._my_working_amount)
+        working_amount = [self._my_working_amount[cid] for cid in client_ids]
+        self.set_variable(client_ids, 'working_amount', working_amount)
+# 2. Create federated task Synthetic(1,1)
+task = './syncthetic11'
+gen_config = {'benchmark':{'name':synthetic, 'para':{'alpha':1., 'beta':1., 'num_clients':30}}}
+if not os.path.exists(task): flgo.gen_task(gen_config, task_path=task)
 
-<pre><code class="language-python">
+if __name__ == '__main__':
+    # 3. sequentically run different runners to eliminate the impact of randomness
+    option = {'gpu':[0,],'proportion':1.0, 'log_file':True, 'num_epochs':5, 'learning_rate':0.02, 'batch_size':20, 'num_rounds':200, 'sample':'full', 'aggregate':'uniform'}
+    runner_fedavg_ideal = flgo.init(task, fedavg, option, Logger=fel.BasicLogger)
+    runner_fedavg_ideal.run()
+    runner_fedavg_hete = flgo.init(task, fedavg, option, Simulator=CMPSimulator, Logger=fel.BasicLogger)
+    runner_fedavg_hete.run()
+    runner_fedprox_hete = flgo.init(task, fedprox, option, Simulator=CMPSimulator, Logger=fel.BasicLogger)
+    runner_fedprox_hete.run()
+    runner_fednova_hete = flgo.init(task, fednova, option, Simulator=CMPSimulator, Logger=fel.BasicLogger)
+    runner_fednova_hete.run()
+    # visualize the experimental result
+    # 4. Visualize results
+    analysis_plan = {
+        'Selector': {'task': task, 'header':['fedavg', 'fedprox', 'fednova'], 'legend_with':['SIM'] },
+        'Painter': {
+            'Curve': [
+                {
+                    'args': {'x': 'communication_round', 'y': 'test_loss'},
+                    'obj_option': {'color': ['r', 'g', 'b', 'y', 'skyblue']},
+                    'fig_option': {'xlabel': 'communication round', 'ylabel': 'test_loss',
+                                   'title': 'fedavg on {}'.format(task), 'ylim':[0,2]}
+                },
+                {
+                    'args': {'x': 'communication_round', 'y': 'test_accuracy'},
+                    'obj_option': {'color': ['r', 'g', 'b', 'y', 'skyblue']},
+                    'fig_option': {'xlabel': 'communication round', 'ylabel': 'test_accuracy',
+                                   'title': 'fedavg on {}'.format(task), 'ylim':[0.6,0.9]}
+                },
+            ]
+        },
+        'Table': {
+            'min_value': [
+                {'x': 'train_loss'},
+                {'x':'test_loss'}
+            ],
+            'max_value': [
+                {'x':'test_accuracy'}
+            ]
+        },
+    }
+    flgo.experiment.analyzer.show(analysis_plan)
 </code></pre>
+<p>The results below show that FedNova achieve similar performance under severe data heterogeneity and outperforms other methods, which are consistent with results in FedNova's paper.
+<img alt="fig_com" src="https://raw.githubusercontent.com/WwZzz/myfigs/master/fl_com.jpg" /></p>
 
 
 
