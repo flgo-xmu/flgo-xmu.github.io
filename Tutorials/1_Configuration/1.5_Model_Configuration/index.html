@@ -2292,6 +2292,8 @@
         
           
         
+          
+        
       
       
         
@@ -2321,7 +2323,21 @@
   
     <li class="md-nav__item">
       <a href="../../../Resources/algorithm/horizontal/" class="md-nav__link">
-        Horizontal
+        Classical FL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Resources/algorithm/personalize/" class="md-nav__link">
+        Personalized FL
       </a>
     </li>
   
@@ -2957,13 +2973,13 @@ class Model(FModule):
 A = Model()
 B = Model()
 </code></pre>
-<pre><code class="language-python">print(&quot;model A: &quot;, A.fc.weight)
-print(&quot;model B: &quot;, B.fc.weight)
+<pre><code class="language-python">print(&quot;model A: &quot;, A.head.weight)
+print(&quot;model B: &quot;, B.head.weight)
 
 # add
-C = A+B # C is a new instance of class Model and changes on C won't have any impact on A or B
-print(&quot;C=A+B: {}&quot;, C.fc.weight)
-print(&quot;Type of C:&quot;,C)
+C = A + B  # C is a new instance of class Model and changes on C won't have any impact on A or B
+print(&quot;C=A+B: {}&quot;, C.head.weight)
+print(&quot;Type of C:&quot;, C)
 </code></pre>
 <pre><code>model A:  Parameter containing:
 tensor([[ 0.2429, -0.4990,  0.1843],
@@ -2982,22 +2998,22 @@ Type of C: Model(
 )
 </code></pre>
 <pre><code class="language-python"># sub
-print('A-B: \n', (A-B).fc.weight)
+print('A-B: \n', (A - B).head.weight)
 print('+++++++++++++++++++++++++++++++++++')
 # scale
-print('2*A: \n', (2*A).fc.weight)
+print('2*A: \n', (2 * A).fc.weight)
 print('+++++++++++++++++++++++++++++++++++')
 # div
-print('A/2: \n', (A/2).fc.weight)
+print('A/2: \n', (A / 2).fc.weight)
 print('+++++++++++++++++++++++++++++++++++')
 # norm
-print('||A||_2: \n', (A**2))
+print('||A||_2: \n', (A ** 2))
 print('+++++++++++++++++++++++++++++++++++')
 # neg
-print('-A: \n', (-A).fc.weight)
+print('-A: \n', (-A).head.weight)
 print('+++++++++++++++++++++++++++++++++++')
 # zeros-copy
-print('A.zeros_like(): \n',A.zeros_like().fc.weight)
+print('A.zeros_like(): \n', A.zeros_like().head.weight)
 print('+++++++++++++++++++++++++++++++++++')
 # dot
 print(&quot;dot(A,B):\n&quot;, A.dot(B))
@@ -3054,22 +3070,23 @@ size(A):
 </code></pre>
 <p>Besides the model-level operators, we also implement some common functions on model-level.</p>
 <pre><code class="language-python">import flgo.utils.fmodule as ff
+
 # exp(A)
-print('exp(A):\n', ff.exp(A).fc.weight)
+print('exp(A):\n', ff.exp(A).head.weight)
 print('+++++++++++++++++++++++++++++++++++')
 # log(A)
-print('log(A):\n', ff.log(A).fc.weight)
+print('log(A):\n', ff.log(A).head.weight)
 print('+++++++++++++++++++++++++++++++++++')
 # model to 1-D vector
 a = ff._model_to_tensor(A)
 print('a = Vec(A):\n', a)
 # 1-D tensor to model
-print('A from a: \n',ff._model_from_tensor(a, A.__class__).fc.weight)
+print('A from a: \n', ff._model_from_tensor(a, A.__class__).head.weight)
 print('+++++++++++++++++++++++++++++++++++')
 # model averaging
-print('AVERAGE([A,B]):\n', ff._model_average([A,B]).fc.weight)
+print('AVERAGE([A,B]):\n', ff._model_average([A, B]).head.weight)
 # model sum
-print('SUM([A,B]):\n', ff._model_sum([A,B]).fc.weight)
+print('SUM([A,B]):\n', ff._model_sum([A, B]).head.weight)
 </code></pre>
 <pre><code>exp(A):
  Parameter containing:
