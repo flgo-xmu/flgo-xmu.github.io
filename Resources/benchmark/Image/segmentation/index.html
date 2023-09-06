@@ -2792,6 +2792,30 @@
 <td><a href="https://github.com/WwZzz/easyFL/raw/FLGo/resources/benchmark/sbdataset_segmentation.zip">Click Here</a></td>
 <td></td>
 </tr>
+<tr>
+<td>cityspaces_segmentation</td>
+<td><a href="https://www.cityscapes-dataset.com/">Cityspaces</a></td>
+<td><a href="#cityspaces_segmentation">See here</a></td>
+<td>Horizontal FL</td>
+<td><a href="https://github.com/WwZzz/easyFL/raw/FLGo/resources/benchmark/cityspaces_segmentation.zip">Click Here</a></td>
+<td></td>
+</tr>
+<tr>
+<td>camvid_segmentation</td>
+<td><a href="https://www.kaggle.com/datasets/carlolepelaars/camvid">CamVID</a></td>
+<td><a href="#camvid_segmentation">See here</a></td>
+<td>Horizontal FL</td>
+<td><a href="https://github.com/WwZzz/easyFL/raw/FLGo/resources/benchmark/camvid_segmentation.zip">Click Here</a></td>
+<td></td>
+</tr>
+<tr>
+<td>ade20k_segmentation</td>
+<td><a href="http://sceneparsing.csail.mit.edu/">ADE20k</a></td>
+<td><a href="#ade20k_segmentation">See here</a></td>
+<td>Horizontal FL</td>
+<td><a href="https://github.com/WwZzz/easyFL/raw/FLGo/resources/benchmark/ade20k_segmentation.zip">Click Here</a></td>
+<td></td>
+</tr>
 </tbody>
 </table>
 <h1 id="details">Details</h1>
@@ -2928,6 +2952,158 @@
 </tbody>
 </table>
 <h3 id="supported-partitioner_2">supported partitioner</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>IsDefault</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IIDPartitioner</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>DiversityPartitioner</td>
+<td></td>
+<td>Partitioning according to label diversity</td>
+</tr>
+<tr>
+<td>DirichletPartitioner</td>
+<td></td>
+<td>Partitioning according to dir. distribution of labels</td>
+</tr>
+</tbody>
+</table>
+<h2 id="cityspaces_segmentation"><strong>cityspaces_segmentation</strong></h2>
+<div id="cityspaces_segmentation"></div>
+
+<h3 id="usage">Usage</h3>
+<p>To use this benchmark, you need to manually download the raw data into the dictionary 'cityspaces_segmentation/cityspaces/'. The necessary file contains
+<code>leftImg8bit_trainvaltest.zip</code> (11GB) and <code>gtFine_trainvaltest.zip</code> (241MB).</p>
+<h3 id="model_3">model</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Model Name</strong></th>
+<th><strong>Non-Fed Performance</strong></th>
+<th><strong>NumPara</strong></th>
+<th><strong>Implementation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FCN_ResNet50</td>
+<td>-</td>
+<td></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="supported-partitioner_3">supported partitioner</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>IsDefault</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IIDPartitioner</td>
+<td>yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="camvid_segmentation"><strong>camvid_segmentation</strong></h2>
+<div id="camvid_segmentation"></div>
+
+<h3 id="usage_1">Usage</h3>
+<p>To use this benchmark, you need to manually download the raw data into the dictionary 'camvid_segmentation/CamVid/' from <a href="https://www.kaggle.com/datasets/carlolepelaars/camvid">Kaggle</a>.
+The downloaded .zip file should also be manually into 'camvid_segmentation/CamVid/'. The architecture of the benchmark should be like:</p>
+<pre><code>├─ camvid_segmentation
+│  ├─ CamVid            //classification on mnist dataset
+│  │  ├─ train       
+│  |  │  ├─ xxx.png           // horizontal fedtask
+│  |  │  ...  
+│  │  ├─ train_labels   
+│  |  │  ├─ xxx.png    
+│  |  │  ...  
+│  │  ├─ val
+│  │  ├─ val_labels 
+│  │  ├─ test
+│  │  ├─ test_labels 
+│  │  └─ class_dict.csv
+│  |     
+│  ├─ model
+│  ├─ config.py
+│  ├─ core.py
+│  └─ __init__.py
+</code></pre>
+<h3 id="model_4">model</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Model Name</strong></th>
+<th><strong>Non-Fed Performance</strong></th>
+<th><strong>NumPara</strong></th>
+<th><strong>Implementation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FCN_ResNet50</td>
+<td>-</td>
+<td></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="supported-partitioner_4">supported partitioner</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>IsDefault</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IIDPartitioner</td>
+<td>yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="ade20k_segmentation"><strong>ade20k_segmentation</strong></h2>
+<div id="ade20k_segmentation"></div>
+<p>ADE20K</p>
+<h3 id="model_5">model</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Model Name</strong></th>
+<th><strong>Non-Fed Performance</strong></th>
+<th><strong>NumPara</strong></th>
+<th><strong>Implementation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FCN_ResNet50</td>
+<td>-</td>
+<td></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="supported-partitioner_5">supported partitioner</h3>
 <table>
 <thead>
 <tr>
