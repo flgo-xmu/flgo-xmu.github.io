@@ -2808,11 +2808,37 @@
 <td><a href="https://github.com/WwZzz/easyFL/raw/FLGo/resources/benchmark/fashion_classification.zip">Click Here</a></td>
 <td>-</td>
 </tr>
+<tr>
+<td>domainnet_classification</td>
+<td><a href="https://ai.bu.edu/M3SDA">DomainNet</a></td>
+<td><a href="#domainnet_classification">See here</a></td>
+<td>Horizontal FL</td>
+<td><a href="https://github.com/WwZzz/easyFL/raw/FLGo/resources/benchmark/domainnet_classification.zip">Click Here</a></td>
+<td>Feature Skew</td>
+</tr>
+<tr>
+<td>office-caltech10_classification</td>
+<td><a href="https://github.com/ChristophRaab/Office_Caltech_DA_Dataset/">OfficeCaltech10</a></td>
+<td><a href="#office-caltech10_classification">See here</a></td>
+<td>Horizontal FL</td>
+<td><a href="https://github.com/WwZzz/easyFL/raw/FLGo/resources/benchmark/office-caltech10_classification.zip">Click Here</a></td>
+<td>Feature Skew</td>
+</tr>
+<tr>
+<td>pacs_classification</td>
+<td><a href="https://github.com/MachineLearning2020/Homework3-PACS/tree/master">PACS</a></td>
+<td><a href="#pacs_classification">See here</a></td>
+<td>Horizontal FL</td>
+<td><a href="https://github.com/WwZzz/easyFL/raw/FLGo/resources/benchmark/pacs_classification.zip">Click Here</a></td>
+<td>Feature Skew</td>
+</tr>
 </tbody>
 </table>
 <h1 id="details">Details</h1>
 <h2 id="mnist_classification"><strong>mnist_classification</strong></h2>
 <div id="mnist_classification"></div>
+
+<p><img alt="mnist" src="https://production-media.paperswithcode.com/datasets/MNIST-0000000001-2e09631a_09liOmx.jpg" /></p>
 <p>Federated MNIST classification is a commonly used benchmark in FL. It assumes different virtual clients having non-overlapping samples from MNIST dataset.</p>
 <h3 id="model">model</h3>
 <table>
@@ -2868,6 +2894,8 @@
 </table>
 <h2 id="cifar10_classification"><strong>cifar10_classification</strong></h2>
 <div id="cifar10_classification"></div>
+
+<p><img alt="cifar10" src="https://production-media.paperswithcode.com/datasets/4fdf2b82-2bc3-4f97-ba51-400322b228b1.png" /></p>
 <p>Federated CIFAR10 classification is a commonly used benchmark in FL. It assumes different virtual clients having non-overlapping samples from CIFAR10 dataset.</p>
 <h3 id="model_1">model</h3>
 <table>
@@ -3077,6 +3105,178 @@
 <td>DirichletPartitioner</td>
 <td></td>
 <td>Partitioning according to dir. distribution of labels</td>
+</tr>
+</tbody>
+</table>
+<h2 id="domainnet_classification"><strong>domainnet_classification</strong></h2>
+<div id="domainnet_classification"></div>
+
+<p><img alt="domainnet" src="http://ai.bu.edu/M3SDA/imgs/data_examples.png" /></p>
+<p>DomainNet contains images of the same labels but different styles (i.e. 6 styles), which can be used to investigate the influence of feature skew in FL.
+The paper is available at <a href="https://arxiv.org/pdf/1812.01754.pdf">link</a></p>
+<h3 id="model_5">model</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Model Name</strong></th>
+<th><strong>Non-Fed Performance</strong></th>
+<th><strong>NumPara</strong></th>
+<th><strong>Implementation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AlexNet</td>
+<td>-</td>
+<td></td>
+<td>-</td>
+</tr>
+<tr>
+<td>resnet18</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="supported-partitioner_5">supported partitioner</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>IsDefault</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IIDPartitioner</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>DiversityPartitioner</td>
+<td></td>
+<td>Partitioning according to label diversity</td>
+</tr>
+<tr>
+<td>DirichletPartitioner</td>
+<td></td>
+<td>Partitioning according to dir. distribution of labels</td>
+</tr>
+</tbody>
+</table>
+<h2 id="office-caltech10_classification"><strong>office-caltech10_classification</strong></h2>
+<div id="office-caltech10_classification"></div>
+
+<p><img alt="office-caltech10" src="https://assets-global.website-files.com/5d7b77b063a9066d83e1209c/61e9cea19bffb144669b08a8_Office-Caltech-10-0000003264-4bfe4754.jpeg" /></p>
+<p>Office-Caltech-10 a standard benchmark for domain adaptation, which consists of Office 10 and Caltech 10 datasets. It contains the 10 overlapping categories between the Office dataset and Caltech256 dataset. SURF BoW historgram features, vector quantized to 800 dimensions are also available for this dataset.</p>
+<h3 id="model_6">model</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Model Name</strong></th>
+<th><strong>Non-Fed Performance</strong></th>
+<th><strong>NumPara</strong></th>
+<th><strong>Implementation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AlexNet</td>
+<td>-</td>
+<td></td>
+<td>-</td>
+</tr>
+<tr>
+<td>resnet18</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="supported-partitioner_6">supported partitioner</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>IsDefault</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IIDPartitioner</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>DiversityPartitioner</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>DirichletPartitioner</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="pacs_classification"><strong>pacs_classification</strong></h2>
+<div id="pacs_classification"></div>
+
+<p><img alt="pacs" src="https://assets-global.website-files.com/5d7b77b063a9066d83e1209c/61e9cfc482f048b007a9c0ab_PACS-0000001060-38db8f1d_ucFoTXn.jpeg" />
+PACS is an image dataset for domain generalization. It consists of four domains, namely Photo (1,670 images), Art Painting (2,048 images), Cartoon (2,344 images) and Sketch (3,929 images). Each domain contains seven categories.</p>
+<h3 id="model_7">model</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Model Name</strong></th>
+<th><strong>Non-Fed Performance</strong></th>
+<th><strong>NumPara</strong></th>
+<th><strong>Implementation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AlexNet</td>
+<td>-</td>
+<td></td>
+<td>-</td>
+</tr>
+<tr>
+<td>resnet18</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="supported-partitioner_7">supported partitioner</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>IsDefault</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IIDPartitioner</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>DiversityPartitioner</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>DirichletPartitioner</td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
